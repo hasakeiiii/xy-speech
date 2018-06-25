@@ -4,8 +4,7 @@ import com.xy.speech.xyspeech.model.SpeechModel;
 import com.xy.speech.xyspeech.service.SpeechService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/speech")
@@ -17,8 +16,8 @@ private SpeechService speechService;
         return "index";
     }
 
-    @RequestMapping("/speech")
-    public String speech(@RequestBody SpeechModel speech){
-        return speechService.returnRet(speech.getPath());
+    @GetMapping("/speech")
+    public String speech(@RequestParam(value = "path") String path){
+        return speechService.returnRet(path);
     }
 }
