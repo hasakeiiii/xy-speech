@@ -1,11 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
     <title>模板</title>
     <meta charset="utf-8" />
 </head>
 <body>
-6666666666666
+<tr th:each="item : ${ret}">
+    <th><a th:text="${{item}}"></a></th>
+</tr>
 </body>
 
 </html>

@@ -17,8 +17,9 @@ public class SpeechServiceImpl implements SpeechService {
     public Map<String, Object> returnRet(String path) {
         Map<String, Object> map = new HashMap<String, Object>();
         String ret = "error";
-        String[] pathArr = path.split("\\.");
-        JSONObject json = SpeechUtil.speechUtil(path, pathArr[1]);
+//        String[] pathArr = path.split("\\.");
+//        JSONObject json = SpeechUtil.speechUtil(path, pathArr[1]);
+        JSONObject json = SpeechUtil.speechUtil(path,"wav");
         try {
             ret = json.getJSONArray("result").get(0).toString();
             map.put("ret",ret);
